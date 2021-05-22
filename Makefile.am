@@ -1,0 +1,10 @@
+ACLOCAL_AMFLAGS = -I m4
+bin_PROGRAMS = Code2
+Code2_SOURCES = code2.c
+Code2_DEPENDENCIES = libprostopadloscian.la libprostokat.a
+lib_LTLIBRARIES = libprostopadloscian.la
+lib_LIBRARIES = libprostokat.a
+libprostopadloscian_la_SOURCES = prostopadloscian.c prostopadloscian.h
+libprostokat_a_SOURCES = prostokat.c prostokat.h
+Code2_LDADD = libprostopadloscian.la libprostokat.a
+Code2_LDFLAGS = -rpath /usr/local/lib
